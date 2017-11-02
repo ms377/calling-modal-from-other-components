@@ -1,0 +1,46 @@
+<div style="text-align:center;background-color: rgb(179, 176, 238)">
+  <h1>
+    Modal usage application!!
+  </h1>
+  <div id="myProgress" (click)="move()">
+    <div id="myBar"></div>
+  </div>
+  <div *ngFor="let i of data;let j = index;">
+    <p>{{i}}</p>
+    <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" (click)="modal(j)">delete</button> -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" (click)="modal(j)">edit</button>
+  </div>
+
+  <form novalidate class="simple-form">
+    <label>Name:
+      <input type="text" ng-model="user.name" />
+    </label>
+    <br />
+    <label>E-mail:
+      <input type="email" ng-model="user.email" />
+    </label>
+    <br /> Best Editor:
+    <label>
+      <input type="radio" ng-model="user.preference" value="vi" />vi</label>
+    <label>
+      <input type="radio" ng-model="user.preference" value="emacs" />emacs</label>
+    <br />
+    <input type="button" ng-click="reset()" value="Reset" />
+    <input type="submit" ng-click="update(user)" value="Save" />
+  </form>
+  123-->{{user}}
+  <br>
+
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" (click)="modal(-1)">add new!</button>
+  <app-modal01 *ngIf="md"></app-modal01>
+  <button type="button" (click)="fireObs()">check Observables-></button>
+
+  <h4 style="background-color: rgb(236, 165, 165)">{{arr}}</h4>
+  <button (click)="pusharr()">add to end</button>
+  <button (click)="unshift()">add to start</button>
+  <button (click)="poparr()">delete from end</button>
+  <button (click)="shiftarr()">delete from start</button>
+
+
+
+</div>
